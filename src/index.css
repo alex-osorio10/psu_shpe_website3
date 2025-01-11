@@ -612,6 +612,13 @@ footer p {
   }
 }
 
+.officer-photo {
+  width: 100%; /* Makes the image fill the width of the container */
+  height: auto; /* Keeps the aspect ratio */
+  aspect-ratio: 5 / 7; /* Ensures a consistent 5x7 ratio */
+  object-fit: cover; /* Ensures the image fits within the aspect ratio while cropping excess */
+  border-radius: 8px 8px 0 0; /* Rounds the top corners for consistency */
+}
 
 
 .officers-container {
