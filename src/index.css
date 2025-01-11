@@ -1,0 +1,739 @@
+/* General body styling */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Georgia', Arial, sans-serif;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure it takes the full viewport height */
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 90px; /* Ensure content is below the fixed header */
+  padding: 0;
+}
+
+/* General Header Styles */
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: white;
+  padding: 15px 20px;
+  height: 90px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Group logos and line for unified hover effect */
+.logo-group {
+  display: flex;
+  align-items: center;
+  cursor: pointer; /* Indicates it's clickable */
+  transition: transform 0.3s ease-in-out; /* Smooth scaling */
+}
+
+.logo-group:hover {
+  transform: scale(1.1); /* Grow all logos and line together */
+}
+
+.logo {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.vertical-line {
+  width: 1px;
+  height: 50px;
+  background-color: black;
+  margin: 0 10px;
+}
+
+/* Inline Menu Styles for Larger Screens */
+.inline-menu {
+  display: flex;
+}
+
+.menu-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  margin-left: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth scaling on hover and click */
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: black; /* Original styling for links */
+  font-weight: bold;
+  padding: 10px 15px; /* Ensures uniform size */
+  font-size: 18px; /* Ensures the font size is consistent */
+}
+
+/* Remove purple visited link styling */
+.menu-item a:visited {
+  color: black;
+}
+
+/* Hover effect for menu items */
+.menu-item a:hover {
+  color: #6E8D23; /* Turn text color to green */
+  transform: scale(1.1); /* Slightly grow the text */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Click effect for menu items */
+.menu-item a:active {
+  transform: scale(1.15); /* Grow a bit more when clicked */
+  transition: transform 0.1s ease; /* Quick feedback for click */
+}
+
+/* Hamburger Menu */
+.menu-button {
+  cursor: pointer;
+  display: none; /* Hidden by default */
+}
+
+.menu-icon {
+  font-size: 24px;
+  color: #333;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.menu-icon:hover {
+  color: #6E8D23;
+  transform: scale(1.2);
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  width: 200px;
+}
+
+.dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-item {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  display: block;
+  padding: 15px 20px;
+}
+
+.dropdown-item a:visited {
+  color: #333; /* Prevent purple styling on visited links */
+}
+
+.dropdown-item a:hover {
+  background-color: #6E8D23;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+/* Active state for dropdown items */
+.dropdown-item a:active {
+  transform: scale(1.1); /* Grow on click */
+  transition: transform 0.1s ease; /* Quick feedback for click */
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+  .inline-menu {
+    display: none; /* Hide inline menu on small screens */
+  }
+
+  .menu-button {
+    display: block; /* Show hamburger menu on small screens */
+  }
+
+  .dropdown-menu {
+    right: 0;
+    width: 100%;
+  }
+
+  .dropdown-item {
+    padding: 15px 0;
+  }
+}
+
+/* Footers */
+footer {
+  background-color: #1e2b4f; /* Background color */
+  text-align: center; /* Center text */
+  padding: 20px 0; /* Add padding for spacing */
+  margin-top: auto; /* Pushes footer to the bottom */
+  width: 100%; /* Full width */
+  box-shadow: 0 -4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the elements horizontally */
+  justify-content: center; /* Center the content vertically */
+  width: 100%; /* Full width */
+  padding: 20px;
+}
+
+.footer-container h2 {
+  text-align: center; /* Ensure all text is centered */
+  font-family: 'Georgia', Arial, sans-serif; /* Font styling */
+  color: #CA9A12; /* White text color */
+  margin: 10px 0;
+}
+
+.footer-container p {
+  text-align: center; /* Ensure all text is centered */
+  font-family: 'Georgia', Arial, sans-serif; /* Font styling */
+  color: #ffffff; /* White text color */
+  margin: 10px 0;
+}
+
+.ideal-logic-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #ffffff; /* White border */
+  color: #ffffff; /* White text color */
+  background-color: transparent; /* Transparent background */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px;
+  margin-bottom: 20px; /* Add space between sections */
+  margin-top: 20px;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: 'Georgia', Arial, sans-serif; /* Font styling for button */
+}
+
+.ideal-logic-button:hover {
+  background-color: #ffffff; /* Hover background color */
+  color: #1e2b4f; /* Text color change on hover */
+}
+
+.social-media {
+  display: flex;
+  justify-content: center; /* Center social media icons */
+  align-items: center; /* Align icons vertically */
+  margin: 15px 0;
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 15px;
+  transition: transform 0.3s;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+footer p {
+  font-size: 1rem;
+  color: #ffffff; /* White text color */
+  font-family: 'Georgia', Arial, sans-serif; /* Font styling */
+}
+
+
+
+/* Slider container to hold the entire slider */
+.slider-container {
+  position: relative;
+  width: 100vw;
+  height: 80vh;
+  overflow: hidden; /* Hide the overflowing slides */
+}
+
+/* Wrapper for the sliding effect */
+.slider-wrapper {
+  display: flex; /* Make the slides align horizontally */
+  width: 300%; /* Depends on the number of slides, 100% for each slide */
+  transition: transform 0.05s ease-in-out; /* Smooth slide transition */
+}
+
+/* Individual slide */
+.slide {
+  min-width: 100vw; /* Each slide takes the full width of the viewport */
+  height: 80vh; /* Full height for the slide */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-image-container {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  min-height: 80vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.images-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out; /* Smooth slide transition */
+}
+
+.image-slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.background-slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire container */
+}
+
+
+
+
+/* Ensure the overlay content stays above the images */
+.overlay-content {
+  position: absolute;
+  top: 55%; /* Adjusted from 50% to move content slightly lower */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+  width: 85%; /* Reduced width for better fit on smaller screens */
+  max-width: 900px; /* Improved responsiveness */
+  padding: 20px;
+  overflow: hidden; 
+  white-space: normal;
+  display: flex; /* Enable flex for vertical stacking */
+  flex-direction: column;
+  align-items: center; /* Center all elements */
+  justify-content: center;
+}
+
+/* Separate logo container to ensure spacing */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; /* Space between logo and button */
+}
+
+/* Ensure logo scales correctly */
+.slide-logo {
+  max-width: 300px;
+  height: auto;
+}
+
+/* Styling for the main header */
+.overlay-content h1 {
+  font-size: 3.5rem; /* Reduced from 4rem for better fit on smaller screens */
+  font-family: 'Georgia', Arial, sans-serif;
+  color: #ffffff;
+  text-shadow: 2px 8px 10px #000000;
+  margin-bottom: 15px; /* Reduced margin to bring elements closer */
+}
+
+/* Styling for the paragraph below the header */
+.overlay-content p {
+  font-size: 1.8rem; /* Reduced from 2rem for better fit */
+  font-family: 'Georgia', Arial, sans-serif;
+  color: #ffffff;
+  text-shadow: 2px 8px 10px #000000;
+  margin-top: 0;
+  margin-bottom: 20px; /* Added margin-bottom for spacing between text and button/logo */
+}
+
+/* PSU Logo adjustments */
+.psu-logo {
+  width: 130px; /* Reduced size from 150px for better fit on smaller screens */
+  margin-top: 10px; /* Added margin-top for better spacing */
+  margin-bottom: 20px; /* Increased margin-bottom for better spacing before button */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Media queries for mobile adjustments */
+@media (max-width: 768px) {
+  .overlay-content {
+    top: 60%; /* Adjusted to move content slightly lower on mobile */
+    width: 90%; /* Increase width slightly on mobile */
+    max-width: 600px; /* Reduce max-width on smaller screens */
+  }
+
+  .overlay-content h1 {
+    font-size: 2.5rem; /* Reduce heading size for mobile */
+  }
+
+  .overlay-content p {
+    font-size: 1.2rem; /* Reduce paragraph size for mobile */
+  }
+
+  .psu-logo {
+    width: 100px; /* Reduce logo size for mobile */
+  }
+}
+
+
+/* Arrow Styling */
+.arrow-left, .arrow-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  color: white; /* Default color is white */
+  cursor: pointer;
+  transition: color 0.3s ease; /* Smooth transition for hover color */
+  z-index: 2;
+  padding: 10px;
+}
+
+.arrow-left {
+  left: 10px;
+}
+
+.arrow-right {
+  right: 10px;
+}
+
+.arrow-left:hover, .arrow-right:hover {
+  color: var(--hover-color, white); /* Dynamic hover color using CSS variables */
+}
+
+
+/* CSS to handle fading effect for the text */
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+
+/* Styling for the Learn More button */
+.learn-more-button {
+  display: inline-block;
+  padding: 16px 28px; /* Adjust padding for better fit */
+  border: 2px solid #4c6219; /* White border */
+  color: #ffffff; /* White text color */
+  background-color: #6E8D23; /* PSU green background */
+  text-decoration: none; /* Remove underline */
+  margin-top: 20px; /* Add some space from the content above */
+  text-align: center;
+  font-size: 1.2rem; /* Ensure font is readable */
+  font-family: 'Georgia', Arial, sans-serif; /* Ensure consistency with other fonts */
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s, border 0.3s; /* Smooth transitions for hover */
+}
+
+.learn-more-button:hover {
+  background-color: #ffffff !important; 
+  color: #000000 !important;
+  border-color: #000000 !important;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+
+/* Media queries for mobile adjustments */
+@media (max-width: 768px) {
+  .learn-more-button {
+    font-size: 1rem; /* Adjust button size for mobile */
+    padding: 10px 20px; /* Adjust padding for better fit on smaller screens */
+  }
+}
+
+
+
+
+/* Styling for the Upcoming Events container */
+.upcoming-events-container {
+  background-color: #1e2b4f;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vw;
+  margin: 0;
+}
+
+/* Upcoming Events Heading */
+.upcoming-events-container h2 {
+  font-size: rem; /* You can adjust the size as needed */
+  font-family: 'Georgia', Arial, sans-serif;
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.event-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2vw;
+  padding: 2vw;
+  background-color: #f5f5f5;
+}
+
+.events-heading {
+  font-size: 1.8rem; /* Adjust size as needed */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff; /* You can adjust the color as per your theme */
+  border-bottom: 4px solid #ffffff; /* Adds an underline */
+  display: inline-block; /* Ensure the underline is applied only to the text */
+  padding-bottom: 5px; /* Adds some space between the text and the underline */
+}
+
+
+.event-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%; /* Allow container to scale */
+  padding: 0;
+  margin: 0;
+}
+
+.event-image {
+  width: 100%; /* Ensure image scales with container */
+  height: auto;
+  object-fit: contain;
+  max-width: 100%; /* Ensure image scales down properly */
+  margin: 0 auto;
+}
+
+.event-text-overlay {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.event-text {
+  text-align: center;
+  padding: 10px;
+  color: #333;
+}
+
+.event-text h3 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.event-text p {
+  font-family: 'Lexend', Arial, sans-serif;
+  margin: 10px 0;
+  font-size: 1.4rem;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .event-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .event-image-container,
+  .event-text-overlay {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .event-text {
+    padding: 10px;
+  }
+}
+
+
+
+.officers-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.officers-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.officer-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 0;  /* Remove padding */
+  margin: 10px;
+  width: 250px;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;  /* Prevent overflow issues */
+}
+
+.officer-info {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  /* Ensures even spacing */
+}
+
+.officer-info p {
+  margin: 5px 0;
+}
+
+.officer-info .major-label {
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+
+.linkedin-container {
+  margin-top: auto;  /* Pushes the LinkedIn icon to the bottom */
+  display: flex;
+  justify-content: center;
+}
+
+.linkedin-icon {
+  color: black;
+  font-size: 3.0rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.linkedin-icon:hover {
+  color: #0077b5;
+  transform: scale(1.2);
+}
+
+
+/* Additional class for adding blank space for shorter names */
+.short-name {
+  padding-bottom: 15px; /* Adds space below shorter names */
+}
+
+.about-us-container {
+  margin-top: 100px;
+  padding: 20px;
+  background-color: #1A2B52;
+}
+
+.about-section-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #e3ebff;
+  border: 8px solid black;
+  overflow: hidden; /* Ensures boxes stay within section bounds */
+}
+
+.about-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.about-image {
+  width: 90%;
+  height: auto;
+}
+
+.about-text {
+  flex: 1;
+  padding: 20px;
+  color: rgb(0, 0, 0);
+  z-index: 2;
+}
+
+.about-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.about-description {
+  font-size: 1.4rem;  /* Maintain or slightly increase font size */
+  line-height: 1.8;   /* Increase line spacing */
+  margin-bottom: 20px;  /* Space between sections */
+}
+
+
+
+
+
