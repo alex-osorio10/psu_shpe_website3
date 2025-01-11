@@ -699,6 +699,7 @@ footer p {
   background-color: #e3ebff;
   border: 8px solid black;
   overflow: hidden; /* Ensures boxes stay within section bounds */
+  flex-direction: row; /* Default: text and image side by side */
 }
 
 .about-image-container {
@@ -728,9 +729,24 @@ footer p {
 }
 
 .about-description {
-  font-size: 1.4rem;  /* Maintain or slightly increase font size */
-  line-height: 1.8;   /* Increase line spacing */
-  margin-bottom: 20px;  /* Space between sections */
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .about-section-container {
+    flex-direction: column; /* Stack image and text vertically */
+  }
+
+  .about-image-container {
+    margin-bottom: 20px; /* Add spacing between image and text */
+  }
+
+  .about-image {
+    width: 100%; /* Ensure the image takes up the full width of its container */
+  }
 }
 
 
